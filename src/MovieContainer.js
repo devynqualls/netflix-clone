@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Row from "./Components/Row";
 import Banner from "./Components/Banner";
+import './App.css'
+import Navbar from "./Components/Navbar";
 
 export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc4N2I4NWFhYmViZmU4OTZjNjFmOGE5ZTJmZjRjMSIsInN1YiI6IjY0NzY2NWI1YmUyZDQ5MDBmOTkzYjVkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EN3A_cKDunza11lmfIJG2W72v_IuabvjOuiOsgPdjdk",
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc4N2I4NWFhYmViZmU4OTZjNjFmOGE5ZTJmZjRjMSIsInN1YiI6IjY0NzI2NWI1YmUyZDQ5MDBmOTkzYjVkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EN3A_cKDunza11lmfIJG2W72v_IuabvjOuiOsgPdjdk'
+    ,
   },
 };
 
@@ -78,7 +80,7 @@ function MovieContainer() {
 
   return (
     <div className="App">
-      <h1>DEVFLIX</h1>
+      <Navbar/>
       {trendingMovies.length > 0 && <Banner movies={trendingMovies} />}
       {trendingMovies.length > 0 && (
         <Row title="TRENDING NOW" movies={trendingMovies} isMainRow />

@@ -1,11 +1,5 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import {
-  options,
-  fetchTrending,
-  fetchPopular,
-  fetchUpcoming,
-} from "../requests";
+
+import React from "react";
 import PropTypes from "prop-types";
 import "./row.css"
 

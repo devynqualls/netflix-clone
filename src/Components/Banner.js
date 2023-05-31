@@ -17,9 +17,9 @@ export default function Banner({ movies }) {
 
   const headerStyle = {
     backgroundImage: bannerMovie
-      ? `url(${baseUrl}${bannerMovie.poster_path})`
+      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0.3, 1.5)), url(${baseUrl}${bannerMovie.poster_path})`
       : "none",
-    backgroundSize: "1000px",
+    backgroundSize: "cover",
     backgroundPosition: "center center",
     backgroundRepeat: "no-repeat",
   };
