@@ -6,6 +6,12 @@
     padding: 20px;
 }
 
+.row{
+    margin-left: 20px;
+}
+.row-title {
+    color: whitesmoke;
+}
 .posters::-webkit-scrollbar {
 display: none;
 }
@@ -22,3 +28,12 @@ display: none;
     transform: scale(1.08);
 
 }
+
+.row_poster_main {
+    max-height: 250px;
+}
+
+.row_poster_main:hover {
+    transform: scale(1.09);
+}
+

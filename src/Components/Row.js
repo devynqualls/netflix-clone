@@ -5,21 +5,22 @@ import {
   fetchTrending,
   fetchPopular,
   fetchUpcoming,
-} from "./requests";
+} from "../requests";
 import PropTypes from "prop-types";
 import "./row.css"
 
-const Row = ({ title, movies }) => {
+const Row = ({ title, movies, isMainRow }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
 
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className="row-title">{title}</h2>
       <div className="posters">
         {movies.map((movie) => (
           <img 
-          className="row__poster"
-          src={baseUrl + movie.poster_path} alt={movie.name} />
+          key={movie.id}
+          className={`row__poster ${isMainRow && "row_poster_main"}`}
+          src={`${baseUrl}${isMainRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
         ))}
 </div>    </div>
   );

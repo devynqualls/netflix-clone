@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Row from "./Row";
+import Row from "./Components/Row";
+import Banner from "./Components/Banner";
 
 export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc4N2I4NWFhYmViZmU4OTZjNjFmOGE5ZTJmZjRjMSIsInN1YiI6IjY0NzI2NWI1YmUyZDQ5MDBmOTkzYjVkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EN3A_cKDunza11lmfIJG2W72v_IuabvjOuiOsgPdjdk",
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc4N2I4NWFhYmViZmU4OTZjNjFmOGE5ZTJmZjRjMSIsInN1YiI6IjY0NzY2NWI1YmUyZDQ5MDBmOTkzYjVkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EN3A_cKDunza11lmfIJG2W72v_IuabvjOuiOsgPdjdk",
   },
 };
 
@@ -77,9 +78,18 @@ function MovieContainer() {
 
   return (
     <div className="App">
-      <Row title="TRENDING NOW" movies={trendingMovies} />
-      <Row title="UPCOMING" movies={upcomingMovies} />
-      <Row title="POPULAR" movies={popularMovies} />
+      <h1>DEVFLIX</h1>
+      {trendingMovies.length > 0 && <Banner movies={trendingMovies} />}
+      {trendingMovies.length > 0 && (
+        <Row title="TRENDING NOW" movies={trendingMovies} isMainRow />
+      )}
+      {upcomingMovies.length > 0 && (
+        <Row title="UPCOMING" movies={upcomingMovies} />
+      )}
+      {popularMovies.length > 0 && (
+        <Row title="POPULAR" movies={popularMovies} />
+      )}
+      {/* Add additional rows here with unique movie data */}
     </div>
   );
 }
