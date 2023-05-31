@@ -80,7 +80,7 @@ function MovieContainer() {
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar/  >
       {trendingMovies.length > 0 && <Banner movies={trendingMovies} />}
       {trendingMovies.length > 0 && (
         <Row title="TRENDING NOW" movies={trendingMovies} isMainRow />
