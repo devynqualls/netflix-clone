@@ -80,7 +80,7 @@ function MovieContainer() {
 
   return (
     <div className="App">
-      <Navbar/  >
+      <Navbar/>
       {trendingMovies.length > 0 && <Banner movies={trendingMovies} />}
       {trendingMovies.length > 0 && (
         <Row title="TRENDING NOW" movies={trendingMovies} isMainRow />
@@ -91,6 +91,17 @@ function MovieContainer() {
       {popularMovies.length > 0 && (
         <Row title="POPULAR" movies={popularMovies} />
       )}
+      {trendingMovies.length > 0 && <Banner movies={trendingMovies} />}
+      {trendingMovies.length > 0 && (
+        <Row title="TRENDING NOW" movies={trendingMovies} isMainRow />
+      )}
+      {upcomingMovies.length > 0 && (
+        <Row title="UPCOMING" movies={upcomingMovies} />
+      )}
+      {popularMovies.length > 0 && (
+        <Row title="POPULAR" movies={popularMovies} />
+      )}
+      
       {/* Add additional rows here with unique movie data */}
     </div>
   );
