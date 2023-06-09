@@ -5,16 +5,15 @@ export default function Banner({ movies }) {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
   const [bannerMovie, setBannerMovie] = useState(null);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    function setRandomMovie() {
+      const randomIndex = Math.floor(Math.random() * movies.length);
+      const randomMovie = movies[randomIndex];
+      setBannerMovie(randomMovie);
+    }
+
     setRandomMovie();
   }, [movies]);
-
-  function setRandomMovie() {
-    const randomIndex = Math.floor(Math.random() * movies.length);
-    const randomMovie = movies[randomIndex];
-    setBannerMovie(randomMovie);
-  }
 
   const headerStyle = {
     backgroundImage: bannerMovie
