@@ -7,7 +7,7 @@ export default function Banner({ movies }) {
 
   useEffect(() => {
     setRandomMovie();
-  }, []);
+  }, [movies]);
 
   function setRandomMovie() {
     const randomIndex = Math.floor(Math.random() * movies.length);
