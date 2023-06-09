@@ -5,6 +5,7 @@ export default function Banner({ movies }) {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
   const [bannerMovie, setBannerMovie] = useState(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setRandomMovie();
   }, [movies]);
